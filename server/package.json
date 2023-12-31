@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node ./src/index.ts",
-    "build": "rm -rf ./dist && tsc && cp -r ../client/dist ./dist/client",
+    "build": "rm -rf ./dist && tsc && pnpm build-client",
+    "build-client": "cd ../client && pnpm build && cd ../server && cp -r ../client/dist ./dist/client",
     "start": "node ./dist/index.js"
   },
   "keywords": [],
